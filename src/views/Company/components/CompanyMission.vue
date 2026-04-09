@@ -2,10 +2,10 @@
   <section class="mission">
     <div class="grid">
       <div>
-        <h3>Mission</h3>
+        <h3>Миссия</h3>
         <p>
-          To deliver safe and scalable energy storage solutions through sodium
-          battery innovation.
+          Наша миссия — внедрять инновационные решения в области хранения энергии, 
+делая их доступными, надежными и эффективными для бизнеса и повседневной жизни.
         </p>
       </div>
 

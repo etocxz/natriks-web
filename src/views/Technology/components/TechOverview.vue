@@ -7,12 +7,16 @@
     
     <div class="container">
         
-      <h2>Technology Overview</h2>
+      <h2>Обзор технологии</h2>
       <p>
-        Sodium-ion batteries utilize abundant sodium resources to deliver
-        reliable and cost-effective energy storage. Compared to lithium-based
-        systems, they offer improved safety and better performance in low
-        temperatures.
+        Натрий-ионные аккумуляторы — это современная технология хранения энергии, 
+в которой перенос заряда осуществляется ионами натрия.
+
+По принципу работы они близки к литий-ионным батареям, 
+но используют более доступные и широко распространённые материалы.
+
+Натрий является одним из самых распространённых элементов на Земле, 
+что делает такие аккумуляторы перспективным решением.
       </p>
     </div>
   </section>
@@ -26,7 +30,7 @@
 }
 
 .container {
-  max-width: 800px;
+  max-width: 1000px;
 }
 
 h2 {

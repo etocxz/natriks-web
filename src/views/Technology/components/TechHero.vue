@@ -1,10 +1,6 @@
 <template>
   <section class="hero">
-    <h1>Sodium Battery Technology</h1>
-    <p>
-      Advanced energy storage solutions designed for safety, scalability,
-      and cost efficiency.
-    </p>
+    <h1>Натрий-ионные системы накопления энергии</h1>
   </section>
 </template>
 
@@ -20,6 +16,7 @@
 
   overflow: hidden;
 }
+
 
 /* 背景光 */
 .hero::before {

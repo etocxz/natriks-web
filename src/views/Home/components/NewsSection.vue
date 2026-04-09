@@ -1,203 +1,195 @@
 <template>
   <section class="news">
-    <h2>Latest News</h2>
+    <div class="slider"
+    @mouseenter="stopAutoPlay"
+  @mouseleave="startAutoPlay">
 
-    <div class="slider" @mouseenter="pause" @mouseleave="start">
-        <button class="nav left" @click="prev">‹</button>
+      <!-- 每一页 -->
       <div
-        class="track"
-        :style="{ transform: `translateX(-${offset}px)` }"
+        v-for="(item, index) in news"
+        :key="item.id"
+        class="slide"
+        :class="{ active: index === current }"
       >
-        <div v-for="item in displayList" :key="item.id" class="card">
-          <img :src="item.image" />
-          <div class="content">
-            <h3>{{ item.title }}</h3>
-            <p>{{ item.desc }}</p>
-          </div>
+        <img :src="item.image" class="bg" />
+
+        <div class="content">
+          <h2>{{ item.title }}</h2>
+          <p>{{ item.desc }}</p>
         </div>
       </div>
-      <button class="nav right" @click="next">›</button>
-    </div>
 
-    <!-- 指示点 -->
-    <div class="dots">
-      <span
-        v-for="(_, i) in news.length"
-        :key="i"
-        :class="{ active: i === current }"
-      />
+      <!-- 左右按钮 -->
+      <button class="nav left" @click="prev">‹</button>
+      <button class="nav right" @click="next">›</button>
+
+      <!-- 小圆点 -->
+      <div class="dots">
+        <span
+          v-for="(_, i) in news"
+          :key="i"
+          :class="{ active: i === current }"
+          @click="go(i)"
+        />
+      </div>
+
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-const visibleCount = 3
-const maxIndex = () => news.value.length - visibleCount
-
 import { ref, onMounted, onUnmounted } from 'vue'
 import { getNews } from '../api'
 import type { NewsItem } from '../types'
 
 const news = ref<NewsItem[]>([])
-const displayList = ref<NewsItem[]>([])
-
 const current = ref(0)
-const offset = ref(0)
-
-let timer: any = null
-const CARD_WIDTH = 724
 
 onMounted(async () => {
   news.value = await getNews()
-
-  displayList.value = news.value
-
-  start()
+  startAutoPlay()
 })
 
-const start = () => {
-  timer = setInterval(() => {
-    current.value++
-    offset.value += CARD_WIDTH
-
-    
-  }, 3000)
-}
+onUnmounted(() => {
+  stopAutoPlay()
+})
 
 const next = () => {
-  if (current.value < maxIndex()) {
+  if (current.value < news.value.length - 1) {
     current.value++
-    offset.value += CARD_WIDTH
   }
 }
 
 const prev = () => {
   if (current.value > 0) {
     current.value--
-    offset.value -= CARD_WIDTH
   }
 }
 
-const pause = () => {
-  clearInterval(timer)
+const go = (i: number) => {
+  current.value = i
 }
 
-onUnmounted(() => {
+let timer: any = null
+
+const startAutoPlay = () => {
+  timer = setInterval(() => {
+    if (current.value < news.value.length - 1) {
+      current.value++
+    } else {
+      current.value = 0   // 🔥 回到第一张
+    }
+  }, 4000) // 4秒切换
+}
+
+const stopAutoPlay = () => {
   clearInterval(timer)
-})
+}
 </script>
 
 <style scoped>
 .news {
-  padding: 120px 80px;
+  height: 80vh;
 }
 
-h2 {
-  font-size: 36px;
-  margin-bottom: 40px;
-}
-
-/* 滑动窗口 */
+/* 容器 */
 .slider {
-  position: relative;   /* 🔥 必须加 */
+  position: relative;
+  height: 100%;
   overflow: hidden;
 }
 
-/* 按钮通用样式 */
-.nav {
+/* 每一页 */
+.slide {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  inset: 0;
 
-  z-index: 10;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(6px);
-
-  border: none;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-
-  transition: 0.3s;
+  opacity: 0;
+  transition: opacity 0.6s ease;
 }
 
-/* hover效果 */
-.nav:hover {
-  background: rgba(47, 107, 255, 0.4);
+/* 当前页 */
+.slide.active {
+  opacity: 1;
+  z-index: 1;
 }
 
-/* 左右位置 */
-.nav.left {
-  left: 10px;
-}
-
-.nav.right {
-  right: 10px;
-}
-
-/* 轨道 */
-.track {
-  display: flex;
-  gap: 24px;
-  transition: 0.4s ease;
-}
-
-/* 卡片 */
-.card {
-  min-width: 700px;
-  border-radius: 16px;
-  overflow: hidden;
-
-  background: rgba(255, 255, 255, 0.02);
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-}
-
-/* 图片 */
-.card img {
+/* 背景图 */
+.bg {
   width: 100%;
-  height: 320px;
+  height: 100%;
   object-fit: cover;
 }
 
 /* 内容 */
 .content {
-  padding: 16px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  text-align: center;
+  color: white;
 }
 
-h3 {
+.content h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.content p {
   font-size: 16px;
-  margin-bottom: 8px;
+  color: rgba(255,255,255,0.8);
 }
 
-p {
-  font-size: 13px;
-  color: #8A92A3;
+/* 按钮 */
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+
+  background: rgba(0,0,0,0.4);
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
 }
 
-/* 指示点 */
+.nav.left {
+  left: 20px;
+}
+
+.nav.right {
+  right: 20px;
+}
+
+/* 小圆点 */
 .dots {
-  margin-top: 20px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .dots span {
   display: inline-block;
   width: 8px;
   height: 8px;
-  margin-right: 8px;
-
-  background: rgba(255, 255, 255, 0.2);
+  margin: 0 6px;
   border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .dots .active {
-  background: #2F6BFF;
+  width:20px;
+  border-radius:10px;
+  background: white;
 }
 </style>

@@ -12,28 +12,28 @@
       <!-- 中：导航 -->
       <div class="links">
         <div class="column">
-          <h4>Company</h4>
-          <router-link to="/company">About</router-link>
-          <router-link to="/technology">Technology</router-link>
+          <h4>Компания</h4>
+          <router-link to="/company">О нас</router-link>
+          <router-link to="/technology">Технология</router-link>
         </div>
 
         <div class="column">
-          <h4>Products</h4>
-          <router-link to="/products">Solutions</router-link>
-          <router-link to="/products">Modules</router-link>
+          <h4>Продукты</h4>
+          <router-link to="/products">Решения</router-link>
+          <router-link to="/products">Модули</router-link>
         </div>
 
         <div class="column">
-          <h4>Contact</h4>
-          <p>Email: info@natriks.com</p>
-          <p>Phone: +86 XXX XXXX</p>
+          <h4>Контакт</h4>
+          <p>Электронная почта: info@natriks.com</p>
+          <p>Телефон: +7(992)341-77-05</p>
         </div>
       </div>
     </div>
 
     <!-- 底部 -->
     <div class="bottom">
-      © 2026 NAtriKs. All rights reserved.
+      © 2026. Все права защищены
     </div>
   </footer>
 </template>

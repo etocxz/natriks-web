@@ -1,10 +1,15 @@
 <template>
   <section class="hero">
     <div class="content">
-      <h1>About NAtriKs</h1>
+      <h1>Кто мы</h1>
       <p>
-        Engineering next-generation sodium battery systems for a sustainable
-        energy future.
+        Мы — одна из первых компаний, начавших коммерческое внедрение натрий-ионных аккумуляторов в России. 
+Мы работаем с этой технологией в различных сферах, включая автомобильные стартерные батареи и системы накопления энергии.
+      </p>
+      <p>
+        Мы сотрудничаем с ведущими исследовательскими центрами в Китае, 
+включая Tsinghua University и Shanghai Jiao Tong University.
+Это сотрудничество обеспечивает нам доступ к передовым научным разработкам.
       </p>
     </div>
   </section>
@@ -29,13 +34,14 @@
 }
 
 .content h1 {
-  font-size: 56px;
+  font-size: 80px;
   margin-bottom: 20px;
 }
 
 .content p {
+  font-size:20px;
   color: #8A92A3;
-  max-width: 600px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 </style>

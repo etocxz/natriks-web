@@ -1,11 +1,15 @@
 <template>
   <section class="intro">
     <div class="container">
-      <h2>Who We Are</h2>
+      <h2>Кто мы</h2>
       <p>
-        NAtriKs is focused on developing advanced sodium battery technologies
-        for large-scale energy storage applications. Our solutions combine
-        safety, cost efficiency, and adaptability for modern energy systems.
+        Мы — одна из первых компаний, начавших коммерческое внедрение натрий-ионных аккумуляторов в России. 
+Мы работаем с этой технологией в различных сферах, включая автомобильные стартерные батареи и системы накопления энергии.
+      </p>
+      <p>
+        Мы сотрудничаем с ведущими исследовательскими центрами в Китае, 
+включая Tsinghua University и Shanghai Jiao Tong University.
+Это сотрудничество обеспечивает нам доступ к передовым научным разработкам.
       </p>
     </div>
   </section>

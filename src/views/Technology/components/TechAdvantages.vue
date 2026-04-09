@@ -1,21 +1,53 @@
 <template>
   <section class="advantages">
-    <h2>Advantages</h2>
+    <h2>Преимущества</h2>
 
     <div class="grid">
       <div class="item fade-up">
-        <h3>Safety</h3>
-        <p>Lower risk of thermal runaway compared to lithium batteries.</p>
+        <h3>Зарядка</h3>
+        <p>Быстрая зарядка и высокая эффективность  
+Заряд до 80% всего за 20 минут  
+Скорость зарядки в 2 раза выше  
+
+Ценность:
+Снижение нагрузки на двигатель  
+Экономия топлива</p>
       </div>
 
       <div class="item fade-up">
-        <h3>Cost Efficiency</h3>
-        <p>Utilizes abundant sodium resources to reduce cost.</p>
+        <h3>Безопасность</h3>
+        <p>Отсутствие риска возгорания  
+(прокол / сжатие / короткое замыкание)
+
+Высокий уровень безопасности</p>
       </div>
 
       <div class="item fade-up">
-        <h3>Low Temperature</h3>
-        <p>Stable performance in cold environments.</p>
+        <h3>Работа в экстремальных условиях</h3>
+        <p>Работа от -40°C до +70°C  
+90% ёмкости при -20°C  
+85% при -40°C  
+
+Ценность:
+Надёжный запуск в любых условиях</p>
+      </div>
+      <div class="item fade-up">
+        <h3>Долговечность</h3>
+        <p>До 3000 циклов  
+Срок службы в 5–10 раз выше  
+
+Ценность:
+Меньше замен  
+Снижение затрат</p>
+      </div>
+      <div class="item fade-up">
+        <h3>Экологичность</h3>
+        <p>До 3000 циклов  
+Срок службы в 5–10 раз выше  
+
+Ценность:
+Меньше замен  
+Снижение затрат</p>
       </div>
     </div>
   </section>

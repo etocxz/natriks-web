@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import HomeHero from './components/HomeHero.vue'
+// import HomeHero from './components/HomeHero.vue'
 import NewsSection from './components/NewsSection.vue'
 import ProductSection from './components/ProductSection.vue'
 </script>

@@ -3,27 +3,37 @@
   <nav class="navbar">
     <!-- 左：Logo -->
     <div class="logo">
+      <router-link to='/'>
         <img src="@/assets/LOGO.2.svg" class="logo-img" />
+      </router-link>
     </div>
 
     <!-- 中：导航 -->
     <div class="links">
-      <router-link to="/" class="link" exact-active-class="router-link-active">Home</router-link>
-      <router-link to="/technology" class="link">Technology</router-link>
-      <router-link to="/products" class="link">Products</router-link>
-      <router-link to="/company" class="link">Company</router-link>
+      <router-link to="/" class="link" exact-active-class="router-link-active">Дом</router-link>
+      <router-link to="/technology" class="link">Технология</router-link>
+      <router-link to="/products" class="link">Продукты</router-link>
+      <router-link to="/company" class="link">Компания</router-link>
     </div>
 
     <!-- 右：按钮 -->
     <div class="actions">
-      <button class="contact-btn">Contact</button>
+      <button @click="showContact=true"class="contact-btn">Контакт</button>
     </div>
   </nav>
+  <ContactModal
+  :visible="showContact"
+  @close="showContact = false"
+/>
 </template>
 
 <script setup lang="ts">
 // 预留扩展（比如登录状态、滚动监听）
 import { onMounted } from 'vue'
+import { ref } from 'vue'
+import ContactModal from '@/components/ContactModal.vue'
+
+const showContact = ref(false)
 
 onMounted(() => {
   document.querySelectorAll('.router-link-active').forEach(el => {
