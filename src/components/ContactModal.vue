@@ -6,19 +6,19 @@
       <div class="left">
         <img src="@/assets/LOGO.2.svg" class="logo" />
 
-        <p class="info">Email: contact@natriks.com</p>
-        <p class="info">Phone: +7 999 123 4567</p>
+        <p class="info">Электронная почта: info@natriks.ru</p>
+        <!-- <p class="info">Phone: +7 999 123 4567</p> -->
       </div>
 
       <!-- 右侧 -->
       <div class="right">
-        <h2>Contact Us</h2>
+        <h2>Связаться с нами</h2>
 
-        <input placeholder="Your Name" />
-        <input placeholder="Email" />
-        <input placeholder="Phone" />
+        <input placeholder="Ваше имя" />
+        <input placeholder="Электронная почта" />
+        <input placeholder="Телефон" />
 
-        <button class="submit">Send</button>
+        <button class="submit">Отправлять</button>
       </div>
 
       <!-- 关闭按钮 -->

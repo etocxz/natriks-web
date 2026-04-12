@@ -5,7 +5,7 @@
       <div class="brand">
         <div class="logo">NAtriKs</div>
         <p class="desc">
-          Next-generation sodium battery energy storage systems.
+          Инновационные технологии хранения энергии.
         </p>
       </div>
 
@@ -20,13 +20,13 @@
         <div class="column">
           <h4>Продукты</h4>
           <router-link to="/products">Решения</router-link>
-          <router-link to="/products">Модули</router-link>
+          <!-- <router-link to="/products">Модули</router-link> -->
         </div>
 
         <div class="column">
           <h4>Контакт</h4>
-          <p>Электронная почта: info@natriks.com</p>
-          <p>Телефон: +7(992)341-77-05</p>
+          <p>Электронная почта: info@natriks.ru</p>
+          <!-- <p>Телефон: +7(992)341-77-05</p> -->
         </div>
       </div>
     </div>

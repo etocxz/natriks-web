@@ -9,6 +9,9 @@ const routes = [
       { path: 'products', component: () => import('@/views/Products/index.vue') },
       { path: 'company', component: () => import('@/views/Company/index.vue') },
       { path: 'technology', component: () => import('@/views/Technology/index.vue') },
+      { path: '/products/:id',
+        component: () => import('@/views/Products/Detail/index.vue'),
+      },
     ],
   },
 ]

@@ -9,5 +9,5 @@
 <script setup lang="ts">
 // import HomeHero from './components/HomeHero.vue'
 import NewsSection from './components/NewsSection.vue'
-import ProductSection from './components/ProductSection.vue'
+import ProductSection from '../Products/components/ProductSection.vue'
 </script>

@@ -1,11 +1,11 @@
 <template>
-  <div class="product" :class="{ reverse }">
+  <div class="product" @click="goDetail":class="{ reverse }">
     <!-- 文本 -->
     <div class="text">
-      <h4 class="tag">Featured Product</h4>
+      <h4 class="tag">Рекомендуемый продукт</h4>
       <h2 class="title">{{ title }}</h2>
       <p class="desc">{{ desc }}</p>
-      <a href="#" class="link">Learn More →</a>
+      <a href="#" class="link">Узнать больше →</a>
     </div>
 
     <!-- 图片 -->
@@ -16,7 +16,16 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+const goDetail = () => {
+  router.push(`/products/${id}`)
+}
+
+const { id } =defineProps<{
+  id:number
   title: string
   desc: string
   img: string

@@ -6,42 +6,42 @@ export const getNews = async (): Promise<NewsItem[]> => {
   return [
     {
       id: 1,
-      title: 'Breakthrough in Sodium Battery',
-      desc: 'Improved efficiency and safety.',
-      image: 'https://images.unsplash.com/photo-1509395176047-4a66953fd231',
+      title: 'Прорыв в натриевых батареях',
+      desc: ' ',
+      image: 'http://www.ygtech.net.cn/upload/img/20250902170800.jpg',
     },
     {
       id: 2,
-      title: 'Global Expansion',
-      desc: 'Entering new markets.',
-      image: 'https://images.unsplash.com/photo-1497436072909-60f360e1d4b1',
+      title: 'Глобальное расширение',
+      desc: '',
+      image: 'http://www.ygtech.net.cn/upload/img/20250902170921.jpg',
     },
     {
       id: 3,
-      title: 'New Partnership',
-      desc: 'Collaborating globally.',
-      image: 'https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0',
+      title: 'Сотрудничество на глобальном уровне.',
+      desc: '',
+      image: 'http://www.ygtech.net.cn/upload/img/20250902170912.jpg',
     },
 
     // 🔥 新增测试数据
     {
       id: 4,
-      title: 'AI Energy Optimization',
-      desc: 'Using AI to optimize storage systems.',
-      image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b',
+      title: 'Материалы нового поколения',
+      desc: '',
+      image: 'http://www.ygtech.net.cn/upload/img/20250902170809.jpg',
     },
-    {
-      id: 5,
-      title: 'Cold Climate Performance',
-      desc: 'Stable output in extreme temperatures.',
-      image: 'https://images.unsplash.com/photo-1489515217757-5fd1be406fef',
-    },
-    {
-      id: 6,
-      title: 'Next-gen Materials',
-      desc: 'Exploring new sodium compounds.',
-      image: 'https://images.unsplash.com/photo-1581092919537-1f1b0f1b2b8f',
-    },
+    // {
+    //   id: 5,
+    //   title: 'Cold Climate Performance',
+    //   desc: 'Stable output in extreme temperatures.',
+    //   image: 'https://images.unsplash.com/photo-1489515217757-5fd1be406fef',
+    // },
+    // {
+    //   id: 6,
+    //   title: 'Next-gen Materials',
+    //   desc: 'Exploring new sodium compounds.',
+    //   image: 'https://images.unsplash.com/photo-1581092919537-1f1b0f1b2b8f',
+    // },
   ]
 }
 

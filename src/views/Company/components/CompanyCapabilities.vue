@@ -1,25 +1,25 @@
 <template>
   <section class="capabilities">
-    <h2>Our Capabilities</h2>
+    <h2>Наши возможности</h2>
 
     <div class="items">
       <div class="item">
-        <h4>Battery Technology</h4>
-        <p>Advanced sodium-based chemistry and design.</p>
+        <h4>Батарейные технологии</h4>
+        <p>Передовые достижения в области химии и проектирования на основе натрия.</p>
       </div>
 
       <div class="item">
-        <h4>Energy Systems</h4>
-        <p>Scalable storage solutions for grid and industry.</p>
+        <h4>Энергетические системы</h4>
+        <p>Масштабируемые решения для хранения данных в электросетях и промышленности.</p>
       </div>
 
       <div class="item">
-        <h4>Customization</h4>
-        <p>Tailored solutions for diverse environments.</p>
+        <h4>Кастомизация</h4>
+        <p>Индивидуальные решения для различных условий эксплуатации.</p>
       </div>
     </div>
   </section>
-</template>
+</template> 
 
 <style scoped>
 .capabilities {

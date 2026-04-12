@@ -10,10 +10,9 @@
       </div>
 
       <div>
-        <h3>Vision</h3>
+        <h3>Видение</h3>
         <p>
-          To become a global leader in next-generation energy storage systems.
-        </p>
+        Стать мировым лидером в области систем хранения энергии нового поколения.        </p>
       </div>
     </div>
   </section>
