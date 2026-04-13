@@ -10,8 +10,8 @@
 
       <ProductInfo
         title="H9"
-        desc="Компактные и энергоэффективные натрий-ионные батареи, предназначенные для стабильного питания маломощных устройств. Обеспечивают высокую надёжность, длительный срок службы и экологичность при ежедневном использовании."
-      />
+        desc=""
+        />
 
     </div>
 
@@ -27,10 +27,7 @@ import ProductInfo from './ProductInfo.vue'
 import ProductTable from './ProductTable.vue'
 
 const images = [
-  'http://www.ygtech.net.cn/upload/20250902173511.jpg',
-  'http://www.ygtech.net.cn/upload/20250902173430.jpg',
-  'http://www.ygtech.net.cn/upload/20250902173354.jpg',
-  'http://www.ygtech.net.cn/upload/20250902173141.jpg'
+  new URL('../../assets/H6-sample.svg', import.meta.url).href
 ]
 
 const tableData = [
