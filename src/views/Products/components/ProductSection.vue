@@ -4,6 +4,7 @@
       v-for="item in products"
       :key="item.id"
       :id="item.id"
+      :category="item.category"
       :title="item.title"
       :desc="item.desc"
       :img="item.img"

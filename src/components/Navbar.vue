@@ -10,10 +10,10 @@
 
     <!-- 中：导航 -->
     <div class="links">
-      <router-link to="/" class="link" exact-active-class="router-link-active">Дом</router-link>
+      <router-link to="/" class="link" exact-active-class="router-link-active">Главная</router-link>
       <router-link to="/technology" class="link">Технология</router-link>
-      <router-link to="/products" class="link">Продукты</router-link>
-      <router-link to="/company" class="link">Компания</router-link>
+      <router-link to="/products/low" class="link">Продукты</router-link>
+      <router-link to="/company" class="link">О нас</router-link>
     </div>
 
     <!-- 右：按钮 -->
@@ -64,11 +64,12 @@ onMounted(() => {
 .logo {
   display: flex;
   align-items: center;
+  padding-bottom: 1px;
 }
 
 
 .logo-img {
-  height: 100px;   /* 控制大小 */
+  height: 120px;   /* 控制大小 */
   width: auto;    /* 保持比例 */
 }
 

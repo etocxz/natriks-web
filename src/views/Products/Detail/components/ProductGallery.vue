@@ -31,7 +31,7 @@ const prev = () => {
 <style scoped>
 .gallery {
   position: relative;
-  width: 500px;
+  max-width: 1300px;
   height: 320px;
   overflow: hidden;
   border-radius: 12px;

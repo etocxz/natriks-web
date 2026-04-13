@@ -10,7 +10,7 @@
 
       <ProductInfo
         title="4820(тип разделения)"
-        desc="Высокопроизводительная 12В натрий-ионная батарея для систем запуска и остановки двигателя. Обеспечивает быстрый запуск, стабильную работу в экстремальных условиях и повышенную долговечность по сравнению с традиционными аккумуляторами."
+        desc=" "
       />
 
     </div>
@@ -27,11 +27,9 @@ import ProductInfo from './ProductInfo.vue'
 import ProductTable from './ProductTable.vue'
 
 const images = [
-  'http://www.ygtech.net.cn/upload/20250902174747.jpg',
-  'http://www.ygtech.net.cn/upload/20250902174442.jpg',
-  'http://www.ygtech.net.cn/upload/20250902173555705_37542.jpg',
-]
+  new URL('../../assets/4820.svg', import.meta.url).href
 
+]
 const tableData = [
   { label: 'Номинальное напряжение, В', value: '48V' },
   { label: 'Номинальная ёмкость, А·ч', value: '20Ah' },

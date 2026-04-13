@@ -21,11 +21,12 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 
 const goDetail = () => {
-  router.push(`/products/${id}`)
+  router.push(`/products/${props.category}/${props.id}`)
 }
 
-const { id } =defineProps<{
+const props =defineProps<{
   id:number
+  category: string
   title: string
   desc: string
   img: string

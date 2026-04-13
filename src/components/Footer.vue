@@ -19,7 +19,7 @@
 
         <div class="column">
           <h4>Продукты</h4>
-          <router-link to="/products">Решения</router-link>
+          <router-link to="/products/low">Решения</router-link>
           <!-- <router-link to="/products">Модули</router-link> -->
         </div>
 

@@ -1,4 +1,8 @@
 import type { NewsItem } from './types'
+import news0 from './NewsAssets/news0.svg'
+import news1 from './NewsAssets/news1.svg'
+import news2 from './NewsAssets/news2.svg'
+import news3 from './NewsAssets/news3.svg'
 
 export const getNews = async (): Promise<NewsItem[]> => {
   await new Promise(r => setTimeout(r, 300))
@@ -8,19 +12,19 @@ export const getNews = async (): Promise<NewsItem[]> => {
       id: 1,
       title: 'Прорыв в натриевых батареях',
       desc: ' ',
-      image: 'http://www.ygtech.net.cn/upload/img/20250902170800.jpg',
+      image: news0,
     },
     {
       id: 2,
       title: 'Глобальное расширение',
       desc: '',
-      image: 'http://www.ygtech.net.cn/upload/img/20250902170921.jpg',
+      image: news1,
     },
     {
       id: 3,
       title: 'Сотрудничество на глобальном уровне.',
       desc: '',
-      image: 'http://www.ygtech.net.cn/upload/img/20250902170912.jpg',
+      image: news2,
     },
 
     // 🔥 新增测试数据
@@ -28,7 +32,7 @@ export const getNews = async (): Promise<NewsItem[]> => {
       id: 4,
       title: 'Материалы нового поколения',
       desc: '',
-      image: 'http://www.ygtech.net.cn/upload/img/20250902170809.jpg',
+      image: news3,
     },
     // {
     //   id: 5,

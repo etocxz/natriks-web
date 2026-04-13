@@ -1,0 +1,52 @@
+<template>
+  <div class="detail">
+
+    <h1>Маломощные натрий-ионные батареи</h1>
+
+    <!-- 上半部分 -->
+    <div class="top">
+
+      <ProductGallery :images="images" />
+
+      <ProductInfo
+        title="7220(тип разделения)"
+        desc=""
+        />
+
+    </div>
+
+    <!-- 表格 -->
+    <ProductTable :data="tableData" />
+
+  </div>
+</template>
+
+<script setup lang="ts">
+import ProductGallery from './ProductGallery.vue'
+import ProductInfo from './ProductInfo.vue'
+import ProductTable from './ProductTable.vue'
+
+const images = [
+  new URL('../../assets/7220.svg', import.meta.url).href
+
+]
+
+const tableData = [
+  { label: 'Номинальное напряжение, В', value: '72V' },
+  { label: 'Номинальная ёмкость, А·ч', value: '20Ah' },
+  { label: 'Габариты, мм', value: '230*180*170 & 230*180*170' },
+  { label: 'Вес, кг', value: '18.8' },
+]
+</script>
+
+<style scoped>
+.detail {
+  padding: 80px;
+}
+
+.top {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+</style>
