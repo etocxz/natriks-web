@@ -110,4 +110,46 @@
   color: #6B7280;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
+
+/*手机样式 */
+@media (max-width: 768px) {
+
+  /*  主容器改为上下布局 */
+  .footer-container {
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 20px;
+  }
+
+  /*  品牌区域居中 */
+  .brand {
+    text-align: center;
+    align-items: center;
+  }
+
+  /*  links 改为竖排 */
+  .links {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  /*  每一列居中 */
+  .column {
+    align-items: center;
+  }
+
+  /*  文字居中 */
+  .column h4,
+  .column a,
+  .column p {
+    text-align: center;
+  }
+
+  /*  底部间距优化 */
+  .bottom {
+    font-size: 12px;
+    padding: 16px;
+  }
+}
 </style>

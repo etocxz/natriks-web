@@ -16,6 +16,18 @@
       <router-link to="/company" class="link">О нас</router-link>
     </div>
 
+    <!-- <div class="menu-toggle" @click="menuOpen = !menuOpen">
+      ☰
+    </div>
+
+    <div :class="['nav-links', { open: menuOpen }]">
+      <a href="/">Главная</a>
+      <a href="/products/low">Продукты</a>
+      <a href="/company">О нас</a>
+      <a href="/contact">Контакт</a>
+
+    </div> -->
+
     <!-- 右：按钮 -->
     <div class="actions">
       <button @click="showContact=true"class="contact-btn">Контакт</button>
@@ -33,6 +45,7 @@ import { onMounted } from 'vue'
 import { ref } from 'vue'
 import ContactModal from '@/components/ContactModal.vue'
 
+// const menuOpen = ref(false)~
 const showContact = ref(false)
 
 onMounted(() => {
@@ -142,5 +155,60 @@ onMounted(() => {
 .contact-btn:hover {
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(47, 107, 255, 0.3);
+}
+
+/*手机样式 */
+/* 🔥 默认（PC）保持不变 */
+
+/* 隐藏汉堡按钮（PC） */
+.menu-toggle {
+  display: none;
+}
+
+
+/* ================= 手机适配 ================= */
+@media (max-width: 768px) {
+
+  /*  Navbar 内边距缩小 */
+  .navbar {
+    padding: 12px 16px;
+  }
+
+  /*  显示汉堡按钮 */
+  .menu-toggle {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+  }
+
+  /*  导航整体变成下拉层 */
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+
+    background: #0B0F1A;
+    backdrop-filter: blur(10px);
+
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+
+    display: none;   /* 默认隐藏 */
+  }
+
+  /*  打开状态 */
+  .nav-links.open {
+    display: flex;
+  }
+
+  /*  每个链接变大一点 */
+  .nav-links a {
+    font-size: 16px;
+  }
+
 }
 </style>
