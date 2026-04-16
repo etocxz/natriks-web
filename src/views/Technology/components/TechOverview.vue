@@ -42,4 +42,27 @@ p {
   color: #8A92A3;
   line-height: 1.8;
 }
+
+@media (max-width: 768px) {
+  .overview {
+    padding: 72px 20px;
+  }
+
+  .container {
+    max-width: none;
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 28px;
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.8;
+    word-break: break-word;
+  }
+}
 </style>

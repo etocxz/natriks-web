@@ -59,4 +59,40 @@ h4 {
 p {
   color: #8A92A3;
 }
+
+@media (max-width: 768px) {
+  .capabilities {
+    padding: 72px 20px;
+  }
+
+  .capabilities h2 {
+    font-size: 28px;
+    margin-bottom: 24px;
+    line-height: 1.3;
+  }
+
+  .items {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .item {
+    padding: 22px 18px;
+  }
+
+  .item:hover {
+    transform: translateY(-2px);
+  }
+
+  h4 {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.7;
+    word-break: break-word;
+  }
+}
 </style>

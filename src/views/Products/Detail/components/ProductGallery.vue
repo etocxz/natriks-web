@@ -62,4 +62,21 @@ const prev = () => {
 
 .left { left: 10px }
 .right { right: 10px }
+
+@media (max-width: 768px) {
+  .gallery {
+    max-width: 100%;
+    height: 220px;
+    border-radius: 10px;
+  }
+
+  .nav {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .left { left: 8px }
+  .right { right: 8px }
+}
 </style>

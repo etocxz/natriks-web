@@ -27,4 +27,23 @@ p {
   color: #8A92A3;
   line-height: 1.7;
 }
+
+@media (max-width: 768px) {
+  .info {
+    max-width: none;
+    width: 100%;
+    padding-left: 0;
+  }
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 12px;
+    line-height: 1.35;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
 </style>

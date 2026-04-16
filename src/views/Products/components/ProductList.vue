@@ -61,4 +61,27 @@ const getImg = (path: string) => {
   color: white;
   font-size: 16px;
 }
+
+@media (max-width: 768px) {
+  .list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .card {
+    padding: 14px 10px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .card img {
+    height: 110px;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
 </style>

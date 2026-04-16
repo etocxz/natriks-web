@@ -99,5 +99,42 @@ onMounted(() => {
   border-color: rgba(47, 107, 255, 0.5);
   box-shadow: 0 10px 30px rgba(47, 107, 255, 0.1);
   transform: translateY(-6px);
-}   
+}
+
+@media (max-width: 768px) {
+  .advantages {
+    padding: 72px 20px;
+  }
+
+  .grid {
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 24px;
+  }
+
+  .item {
+    padding: 24px 18px;
+  }
+
+  .item:hover {
+    transform: translateY(-2px);
+  }
+
+  h2 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.7;
+    word-break: break-word;
+  }
+}
 </style>

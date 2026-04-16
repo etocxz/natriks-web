@@ -100,4 +100,44 @@ const props =defineProps<{
 .image img:hover {
   transform: scale(1.03);
 }
+
+@media (max-width: 768px) {
+  .product,
+  .product.reverse {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+    padding: 40px 0;
+  }
+
+  /* 鏂囨湰鍖哄煙 */
+  .text {
+    max-width: none;
+    width: 100%;
+  }
+
+  /* 涓绘爣棰?*/
+  .title {
+    font-size: 28px;
+    margin-bottom: 14px;
+  }
+
+  /* 鎻忚堪 */
+  .desc {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+  }
+
+  /* 鍥剧墖鍖哄煙 */
+  .image {
+    width: 100%;
+  }
+
+  .image img {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 12px;
+  }
+}
 </style>

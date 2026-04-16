@@ -50,4 +50,22 @@ const tableData = [
   gap: 60px;
   align-items: center;
 }
+
+@media (max-width: 768px) {
+  .detail {
+    padding: 24px 20px 48px;
+  }
+
+  h1 {
+    font-size: 26px;
+    line-height: 1.35;
+    margin-bottom: 24px;
+  }
+
+  .top {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+  }
+}
 </style>

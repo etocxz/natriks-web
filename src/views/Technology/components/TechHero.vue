@@ -40,4 +40,24 @@
   50% { transform: translate(20%, 20%); }
   100% { transform: translate(-20%, -20%); }
 }
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 44vh;
+    height: auto;
+    padding: 56px 20px;
+  }
+
+  .hero::before {
+    width: 420px;
+    height: 420px;
+  }
+
+  h1 {
+    font-size: 28px;
+    line-height: 1.35;
+    position: relative;
+    z-index: 1;
+  }
+}
 </style>

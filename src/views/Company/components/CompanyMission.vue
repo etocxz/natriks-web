@@ -42,4 +42,36 @@
   transform: translateY(-6px);
   background: rgba(255, 255, 255, 0.04);
 }
+
+@media (max-width: 768px) {
+  .mission {
+    padding: 72px 20px;
+  }
+
+  .grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .grid > div {
+    padding: 24px 18px;
+  }
+
+  .grid > div:hover {
+    transform: translateY(-2px);
+  }
+
+  h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0;
+    word-break: break-word;
+  }
+}
 </style>

@@ -44,4 +44,24 @@
   max-width: 1200px;
   margin: 0 auto;
 }
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 48vh;
+    height: auto;
+    padding: 56px 20px;
+  }
+
+  .content h1 {
+    font-size: 38px;
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .content p {
+    font-size: 14px;
+    line-height: 1.8;
+    max-width: none;
+  }
+}
 </style>

@@ -47,4 +47,29 @@ defineEmits(['update:modelValue'])
   background: #2c51f6;
   color: white;
 }
+
+@media (max-width: 768px) {
+  .menu {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .head{
+    padding-bottom: 14px;
+  }
+
+  .head h3 {
+    font-size: 20px;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .item {
+    padding: 14px 16px;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    border-radius: 10px;
+  }
+}
 </style>

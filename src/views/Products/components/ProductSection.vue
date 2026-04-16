@@ -30,4 +30,10 @@ onMounted(async () => {
 .products {
   padding: 120px 100px;
 }
+
+@media (max-width: 768px) {
+  .products {
+    padding: 72px 20px;
+  }
+}
 </style>

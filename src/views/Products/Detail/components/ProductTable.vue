@@ -43,4 +43,22 @@ tr {
 tr:hover {
   background: rgba(255,255,255,0.03);
 }
+
+@media (max-width: 768px) {
+  .table {
+    margin-top: 32px;
+  }
+
+  .label,
+  .value {
+    padding: 12px 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    vertical-align: top;
+  }
+
+  .label {
+    width: 44%;
+  }
+}
 </style>

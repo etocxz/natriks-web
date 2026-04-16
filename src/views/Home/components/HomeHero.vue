@@ -53,4 +53,34 @@
   width: 420px;
   border-radius: 12px;
 }
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 42vh;
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .hero-logo {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .logo {
+    font-size: 40px;
+    letter-spacing: 2px;
+  }
+
+  .subtitle {
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* 鍥剧墖 */
+  .image img {
+    width: 100%;
+    max-width: 320px;
+  }
+}
 </style>

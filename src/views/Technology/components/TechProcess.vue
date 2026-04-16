@@ -49,4 +49,38 @@
   font-size: 24px;
   color: #2F6BFF;
 }
+
+@media (max-width: 768px) {
+  .process {
+    padding: 72px 20px;
+  }
+
+  .steps {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* 涓棿绾?*/
+  .steps::before {
+    display: none;
+  }
+
+  .step {
+    padding: 18px 16px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .step span {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .step p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+  }
+}
 </style>

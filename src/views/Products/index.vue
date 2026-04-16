@@ -68,4 +68,12 @@ const filteredProducts = computed(() => {
   gap: 40px;
   padding: 60px;
 }
+
+@media (max-width: 768px) {
+  .products-page {
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 20px 60px;
+  }
+}
 </style>

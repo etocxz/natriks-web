@@ -192,4 +192,61 @@ const stopAutoPlay = () => {
   border-radius:10px;
   background: white;
 }
+
+@media (max-width: 768px) {
+  .news {
+    height: 58vh;
+    min-height: 420px;
+  }
+
+  /* 瀹瑰櫒 */
+  .slider {
+    border-radius: 16px;
+  }
+
+  /* 鍐呭 */
+  .content {
+    top: auto;
+    bottom: 72px;
+    left: 20px;
+    right: 20px;
+    transform: none;
+    text-align: left;
+  }
+
+  .content h2 {
+    font-size: 28px;
+    margin-bottom: 12px;
+    line-height: 1.25;
+  }
+
+  .content p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* 鎸夐挳 */
+  .nav {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .nav.left {
+    left: 12px;
+  }
+
+  .nav.right {
+    right: 12px;
+  }
+
+  /* 灏忓渾鐐?*/
+  .dots {
+    bottom: 16px;
+  }
+
+  .dots span {
+    margin: 0 5px;
+  }
+}
 </style>
