@@ -19,7 +19,7 @@
     </div>
 
     <div class="actions">
-      <button class="contact-btn" @click="showContact = true">联系我们</button>
+      <button class="contact-btn" @click="showContact = true">Контакты</button>
     </div>
 
     <button
@@ -48,7 +48,7 @@
         class="contact-btn mobile-contact-btn"
         @click="showContact = true; menuOpen = false"
       >
-        联系我们
+        Контакты
       </button>
     </div>
   </nav>
@@ -64,10 +64,10 @@ const menuOpen = ref(false)
 const showContact = ref(false)
 
 const navItems = [
-  { to: '/', label: '首页' },
-  { to: '/technology', label: '技术' },
-  { to: '/products/low', label: '产品' },
-  { to: '/company', label: '公司' },
+  { to: '/', label: 'Главная' },
+  { to: '/technology', label: 'Технология' },
+  { to: '/products/low', label: 'Продукты' },
+  { to: '/company', label: 'О нас' },
 ]
 
 onMounted(() => {

@@ -46,8 +46,8 @@ watch(currentCategory, (val) => {
 
 
 const categories = [
-  { key: 'low', label: '袦邪谢褘械 褌褟谐芯胁褘械 薪邪褌褉懈械胁褘械 邪泻泻褍屑褍谢褟褌芯褉褘' },
-  { key: 'car', label: ' 12V 袗胁褌芯屑芯斜懈谢褜薪褘械 褋褌邪褉褌械褉薪褘械 邪泻泻褍屑褍谢褟褌芯褉褘' },
+  { key: 'low', label: 'Малые тяговые натриевые аккумуляторы' },
+  { key: 'car', label: '12V Автомобильные стартерные аккумуляторы' },
 ]
 
 // 妯℃嫙鏁版嵁锛堝悗闈㈠彲浠ユ崲API锛?
@@ -56,13 +56,13 @@ const products = [
   { id: 2, title: 'H7', category: 'car', img: imgH6Sample },
   { id: 3, title: 'H8', category: 'car', img: imgH6Sample },
   { id: 4, title: 'H9', category: 'car', img: imgH6Sample },
-  { id: 1, title: '4820(褌懈锌 褉邪蟹写械谢械薪懈褟)', category: 'low', img: img4820 },
-  { id: 2, title: '4820(袙褋褢 胁 芯写薪芯屑)', category: 'low', img: img4820_1 },
-  { id: 3, title: '4833(褌懈锌 褉邪蟹写械谢械薪懈褟)', category: 'low', img: img4833 },
-  { id: 4, title: '6020(褌懈锌 褉邪蟹写械谢械薪懈褟)', category: 'low', img: img6020 },
-  { id: 5, title: '6033(褌懈锌 褉邪蟹写械谢械薪懈褟)', category: 'low', img: img6033 },
-  { id: 6, title: '7220(褌懈锌 褉邪蟹写械谢械薪懈褟)', category: 'low', img: img7220 },
-  { id: 7, title: '6033(褌懈锌 褉邪蟹写械谢械薪懈褟)', category: 'low', img: img6033_2 },
+  { id: 1, title: '4820(тип разделения)', category: 'low', img: img4820 },
+  { id: 2, title: '4820(Всё в одном)', category: 'low', img: img4820_1 },
+  { id: 3, title: '4833(тип разделения)', category: 'low', img: img4833 },
+  { id: 4, title: '6020(тип разделения)', category: 'low', img: img6020 },
+  { id: 5, title: '6033(тип разделения)', category: 'low', img: img6033 },
+  { id: 6, title: '7220(тип разделения)', category: 'low', img: img7220 },
+  { id: 7, title: '6033(тип разделения)', category: 'low', img: img6033_2 },
 ]
 
 const filteredProducts = computed(() => {
