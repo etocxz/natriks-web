@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div class="list">
     <div
       class="card"
@@ -6,7 +6,7 @@
       :key="item.id"
       @click="goDetail(item.id,item.category)"
     >
-      <img :src="getImg(item.img)" />
+      <img :src="item.img" />
 
       <div class="title">{{ item.title }}</div>
     </div>
@@ -25,18 +25,13 @@ defineProps<{
 const goDetail = (id: number,category:string) => {
   router.push(`/products/${category}/${id}`)
 }
-
-// 关键：本地图片解析
-const getImg = (path: string) => {
-  return new URL(path, import.meta.url).href
-}
 </script>
 
 
 <style scoped>
 .list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 一行4个 */
+  grid-template-columns: repeat(4, 1fr); /* 涓€琛?涓?*/
   gap: 40px;
 }
 
@@ -48,7 +43,7 @@ const getImg = (path: string) => {
 .card img {
   width: 100%;
   height: 140px;
-  object-fit: contain;   /* 保证电池比例正常 */
+  object-fit: contain;   /* 淇濊瘉鐢垫睜姣斾緥姝ｅ父 */
   margin-bottom: 12px;
   transition: 0.3s;
 }
