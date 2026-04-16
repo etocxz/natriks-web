@@ -2,7 +2,7 @@
   <nav class="navbar">
     <div class="logo">
       <router-link to="/">
-        <img src="@/assets/LOGO.2.svg" class="logo-img" alt="Logo" />
+        <img src="@/assets/LOGO2.svg" class="logo-img" alt="Logo" />
       </router-link>
     </div>
 
@@ -93,14 +93,15 @@ onMounted(() => {
 }
 
 .logo {
+  width: 180px;
+  height: 72px;   /* 导航栏里的占位保持固定 */
   display: flex;
   align-items: center;
-  padding-bottom: 1px;
-  flex-shrink: 0;
+  overflow: visible;
 }
 
 .logo-img {
-  height: 120px;
+  height: 190px;
   width: auto;
 }
 

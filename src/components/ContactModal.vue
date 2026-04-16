@@ -4,7 +4,7 @@
 
       <!-- 左侧 -->
       <div class="left">
-        <img src="@/assets/LOGO.2.svg" class="logo" />
+        <img src="@/assets/LOGO2.svg" class="logo" />
 
         <p class="info">Электронная почта: info@natriks.ru</p>
         <!-- <p class="info">Phone: +7 999 123 4567</p> -->
