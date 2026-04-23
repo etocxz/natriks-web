@@ -50,19 +50,19 @@ const categories = [
   { key: 'car', label: '12V Автомобильные стартерные аккумуляторы' },
 ]
 
-// 妯℃嫙鏁版嵁锛堝悗闈㈠彲浠ユ崲API锛?
+
 const products = [
   { id: 1, title: 'H6', category: 'car', img: imgH6Sample },
   { id: 2, title: 'H7', category: 'car', img: imgH6Sample },
   { id: 3, title: 'H8', category: 'car', img: imgH6Sample },
   { id: 4, title: 'H9', category: 'car', img: imgH6Sample },
-  { id: 1, title: '4820(тип разделения)', category: 'low', img: img4820 },
+  { id: 1, title: '4820', category: 'low', img: img4820 },
   { id: 2, title: '4820(Всё в одном)', category: 'low', img: img4820_1 },
-  { id: 3, title: '4833(тип разделения)', category: 'low', img: img4833 },
-  { id: 4, title: '6020(тип разделения)', category: 'low', img: img6020 },
-  { id: 5, title: '6033(тип разделения)', category: 'low', img: img6033 },
-  { id: 6, title: '7220(тип разделения)', category: 'low', img: img7220 },
-  { id: 7, title: '6033(тип разделения)', category: 'low', img: img6033_2 },
+  { id: 3, title: '4833', category: 'low', img: img4833 },
+  { id: 4, title: '6020', category: 'low', img: img6020 },
+  { id: 5, title: '6033', category: 'low', img: img6033 },
+  { id: 6, title: '7220', category: 'low', img: img7220 },
+  { id: 7, title: '6033', category: 'low', img: img6033_2 },
 ]
 
 const filteredProducts = computed(() => {

@@ -1,6 +1,7 @@
 <template>
   <section class="hero">
-    <h1>Натрий-ионные системы накопления энергии</h1>
+    <h1>Натрий-ионные аккумуляторы<br>
+        Na-ion</h1>
   </section>
 </template>
 

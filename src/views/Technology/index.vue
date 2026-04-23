@@ -4,6 +4,7 @@
     <TechOverview />
     <TechAdvantages />
     <TechProcess />
+    <TechReport />
   </div>
 </template>
 
@@ -11,5 +12,6 @@
 import TechHero from './components/TechHero.vue'
 import TechOverview from './components/TechOverview.vue'
 import TechAdvantages from './components/TechAdvantages.vue'
-// import TechProcess from './components/TechProcess.vue'
+import TechProcess from './components/TechProcess.vue'
+import TechReport from './components/TechReport.vue'
 </script>

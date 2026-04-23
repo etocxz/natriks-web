@@ -65,7 +65,7 @@ const showContact = ref(false)
 
 const navItems = [
   { to: '/', label: 'Главная' },
-  { to: '/technology', label: 'Технология' },
+  { to: '/technology', label: 'О продукции' },
   { to: '/products/low', label: 'Продукты' },
   { to: '/company', label: 'О нас' },
 ]
