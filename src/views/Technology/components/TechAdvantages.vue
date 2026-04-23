@@ -2,108 +2,137 @@
   <section class="advantages">
     <h2>Преимущества</h2>
 
-    <div class="advantages-layout">
-      <div class="accordion-list">
-        <details class="item fade-up" open>
-          <summary><span>Зарядка</span></summary>
+    <div class="advantages-layout fade-up">
+      <div class="adv-nav">
+        <button
+          v-for="item in advantageItems"
+          :key="item.key"
+          type="button"
+          :class="['adv-tab', item.key, { active: item.key === currentKey }]"
+          @click="currentKey = item.key"
+        >
+          <span class="tab-label">{{ item.title }}</span>
+          <span class="tab-icon"></span>
+        </button>
+      </div>
 
-          <div class="item-content">
-            <h4>Характеристика:</h4>
+      <div v-if="currentItem" class="adv-detail">
+        <div class="detail-head">
+          <span :class="['detail-badge', currentItem.key]">{{ currentItem.title }}</span>
+        </div>
+
+        <div class="detail-body">
+          <section v-if="currentItem.features.length" class="detail-section">
+            <h4>{{ currentItem.featureLabel }}</h4>
             <ul>
-              <li>Быстрая зарядка и высокая эффективность</li>
-              <li>Заряд до <strong>80% всего за 20 минут</strong></li>
-              <li>Скорость зарядки в 2 раза выше, чем у свинцово-кислотных аккумуляторов</li>
-              <li>Низкий уровень саморазряда</li>
+              <li v-for="feature in currentItem.features" :key="feature">{{ feature }}</li>
             </ul>
+          </section>
 
-            <h4>Ценность для пользователя:</h4>
+          <section v-if="currentItem.note" class="detail-section">
+            <p>{{ currentItem.note }}</p>
+          </section>
+
+          <section v-if="currentItem.values.length" class="detail-section">
+            <h4>{{ currentItem.valueLabel }}</h4>
             <ul>
-              <li>Снижение нагрузки на двигатель</li>
-              <li>Экономия топлива и эксплуатационных затрат</li>
+              <li v-for="value in currentItem.values" :key="value">{{ value }}</li>
             </ul>
-          </div>
-        </details>
-
-        <details class="item fade-up">
-          <summary><span>Безопасность и надежность</span></summary>
-
-          <div class="item-content">
-            <h4>Характеристика:</h4>
-            <ul>
-              <li>Отсутствие риска возгорания при проколе</li>
-              <li>Отсутствие риска возгорания при сжатии</li>
-              <li>Отсутствие риска возгорания при коротком замыкании</li>
-              <li>Уровень безопасности соответствует высококлассным свинцово-кислотным аккумуляторам</li>
-            </ul>
-          </div>
-        </details>
-
-        <details class="item fade-up">
-          <summary><span>Отличная работа при низких температурах</span></summary>
-
-          <div class="item-content">
-            <h4>Характеристики:</h4>
-            <ul>
-              <li>Работоспособность при температурах от -40°C до +70°C</li>
-              <li>Сохранение до 90% ёмкости при -20°C</li>
-              <li>Сохранение до 85% ёмкости при -40°C</li>
-              <li>Мгновенный запуск двигателя в сильный мороз</li>
-              <li>Пусковая способность до 3 раз выше, чем у свинцово-кислотных аккумуляторов</li>
-            </ul>
-
-            <h4>Ценность для пользователя:</h4>
-            <ul>
-              <li>Надёжный запуск в любых климатических условиях</li>
-              <li>Минимальный риск отказа в зимний период</li>
-            </ul>
-          </div>
-        </details>
-
-        <details class="item fade-up">
-          <summary><span>Долговечность и ресурс</span></summary>
-
-          <div class="item-content">
-            <h4>Характеристики:</h4>
-            <ul>
-              <li>До 3000 циклов глубокого разряда</li>
-              <li>Срок службы в 5-10 раз выше, чем у свинцовых аккумуляторов</li>
-            </ul>
-
-            <h4>Ценность для пользователя:</h4>
-            <ul>
-              <li>Срок службы приближен к ресурсу автомобиля</li>
-              <li>Минимальная потребность в замене</li>
-              <li>Снижение совокупной стоимости владения до 61%</li>
-            </ul>
-          </div>
-        </details>
-
-        <details class="item fade-up">
-          <summary><span>Экологичность</span></summary>
-
-          <div class="item-content">
-            <h4>Не содержит:</h4>
-            <ul>
-              <li>Свинец</li>
-              <li>Кадмий</li>
-            </ul>
-
-            <p>Снижение углеродных выбросов до 90%</p>
-
-            <h4>Ценность для пользователя:</h4>
-            <ul>
-              <li>Снижение негативного воздействия на окружающую среду</li>
-              <li>Безопасность для человека и экосистемы</li>
-            </ul>
-          </div>
-        </details>
+          </section>
+        </div>
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { computed, onMounted, ref } from 'vue'
+
+const advantageItems = [
+  {
+    key: 'charging',
+    title: 'Зарядка',
+    featureLabel: 'Характеристика:',
+    valueLabel: 'Ценность для пользователя:',
+    note: '',
+    features: [
+      'Быстрая зарядка и высокая эффективность',
+      'Заряд до 80% всего за 20 минут',
+      'Скорость зарядки в 2 раза выше, чем у свинцово-кислотных аккумуляторов',
+      'Низкий уровень саморазряда',
+    ],
+    values: [
+      'Снижение нагрузки на двигатель',
+      'Экономия топлива и эксплуатационных затрат',
+    ],
+  },
+  {
+    key: 'eco',
+    title: 'Экологичность',
+    featureLabel: 'Не содержит:',
+    valueLabel: 'Ценность для пользователя:',
+    note: 'Снижение углеродных выбросов до 90%',
+    features: ['Свинец', 'Кадмий'],
+    values: [
+      'Снижение негативного воздействия на окружающую среду',
+      'Безопасность для человека и экосистемы',
+    ],
+  },
+  {
+    key: 'cold',
+    title: 'Отличная работа при низких температурах',
+    featureLabel: 'Характеристики:',
+    valueLabel: 'Ценность для пользователя:',
+    note: '',
+    features: [
+      'Работоспособность при температурах от -40°C до +70°C',
+      'Сохранение до 90% ёмкости при -20°C',
+      'Сохранение до 85% ёмкости при -40°C',
+      'Мгновенный запуск двигателя в сильный мороз',
+      'Пусковая способность до 3 раз выше, чем у свинцово-кислотных аккумуляторов',
+    ],
+    values: [
+      'Надёжный запуск в любых климатических условиях',
+      'Минимальный риск отказа в зимний период',
+    ],
+  },
+  {
+    key: 'durability',
+    title: 'Долговечность и ресурс',
+    featureLabel: 'Характеристики:',
+    valueLabel: 'Ценность для пользователя:',
+    note: '',
+    features: [
+      'До 3000 циклов глубокого разряда',
+      'Срок службы в 5-10 раз выше, чем у свинцовых аккумуляторов',
+    ],
+    values: [
+      'Срок службы приближен к ресурсу автомобиля',
+      'Минимальная потребность в замене',
+      'Снижение совокупной стоимости владения до 61%',
+    ],
+  },
+  {
+    key: 'safety',
+    title: 'Безопасность и надежность',
+    featureLabel: 'Характеристика:',
+    valueLabel: '',
+    note: '',
+    features: [
+      'Отсутствие риска возгорания при проколе',
+      'Отсутствие риска возгорания при сжатии',
+      'Отсутствие риска возгорания при коротком замыкании',
+      'Уровень безопасности соответствует высококлассным свинцово-кислотным аккумуляторам',
+    ],
+    values: [],
+  },
+] as const
+
+const currentKey = ref<(typeof advantageItems)[number]['key']>('charging')
+
+const currentItem = computed(() =>
+  advantageItems.find(item => item.key === currentKey.value) ?? advantageItems[0]
+)
 
 onMounted(() => {
   const els = document.querySelectorAll('.fade-up')
@@ -131,111 +160,149 @@ onMounted(() => {
 }
 
 .advantages-layout {
-  display: flex;
-  justify-content: center;
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr);
+  gap: 56px;
+  align-items: start;
 }
 
-.accordion-list {
-  width: min(100%, 980px);
+.adv-nav {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 14px;
 }
 
-.item {
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.025);
-  overflow: hidden;
-  transition: 0.3s;
-}
-
-/* hover 楂樼骇鏁堟灉 */
-.item:hover {
-  border-color: rgba(47, 107, 255, 0.5);
-  box-shadow: 0 10px 30px rgba(47, 107, 255, 0.1);
-  transform: translateY(-3px);
-}
-
-.item[open] {
-  border-color: rgba(47, 107, 255, 0.55);
-  background: rgba(47, 107, 255, 0.055);
-}
-
-summary {
-  min-height: 62px;
+.adv-tab {
+  min-height: 68px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  padding: 0 24px;
+  gap: 18px;
+  padding: 0 22px;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-left: 3px solid transparent;
+  border-radius: 2px;
+  background: transparent;
+  color: rgba(227, 234, 240, 0.92);
   cursor: pointer;
-  list-style: none;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: left;
 }
 
-summary::-webkit-details-marker {
-  display: none;
+.adv-tab:hover {
+  border-color: rgba(255, 255, 255, 0.58);
+  color: #ffffff;
+  transform: translateX(3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
 }
 
-summary span {
-  display: inline-flex;
-  align-items: center;
-  color: #e3eaf0;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1.35;
+.tab-label {
+  display: inline-block;
+  padding: 0;
+  color: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
 }
 
-summary::after {
-  content: '';
-  width: 12px;
-  height: 12px;
+.tab-icon {
+  width: 10px;
+  height: 10px;
   flex: 0 0 auto;
-  border-right: 2px solid #e3eaf0;
-  border-bottom: 2px solid #e3eaf0;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
   transform: rotate(45deg);
   transition: 0.25s;
+  opacity: 0.85;
 }
 
-.item[open] summary::after {
+.adv-tab.active .tab-icon {
   transform: rotate(225deg);
+  opacity: 1;
 }
 
-.item-content {
-  padding: 4px 72px 30px 72px;
-  color: #c6ccd8;
-}
-
-.item-content h4 {
-  margin: 22px 0 10px;
-  color: #e3eaf0;
-  font-size: 16px;
-}
-
-.item-content ul {
-  margin: 0;
-  padding-left: 22px;
-}
-
-.item-content li,
-.item-content p {
-  color: #9ca6b8;
-  font-size: 15px;
-  line-height: 1.75;
-}
-
-.item-content strong {
+.adv-tab.active {
+  border-color: rgba(255, 255, 255, 0.78);
+  border-left-color: #ffffff;
   color: #ffffff;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+}
+
+.adv-detail {
+  min-height: 420px;
+  padding: 10px 0 0;
+}
+
+.detail-head {
+  margin-bottom: 24px;
+}
+
+.detail-badge {
+  display: inline-block;
+  padding: 0 0 10px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.9);
+}
+
+.detail-body {
+  max-width: 640px;
+}
+
+.detail-section + .detail-section {
+  margin-top: 22px;
+}
+
+.detail-section h4 {
+  margin: 0 0 10px;
+  color: rgba(255, 255, 255, 0.96);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.detail-section p,
+.detail-section li {
+  color: rgba(218, 225, 235, 0.78);
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.detail-section ul {
+  margin: 0;
+  padding-left: 24px;
+}
+
+.detail-section li::marker {
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .fade-up {
   opacity: 0;
   transform: translateY(24px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
 }
 
 .fade-up.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .advantages-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .adv-detail {
+    min-height: auto;
+    padding-top: 0;
+  }
 }
 
 @media (max-width: 768px) {
@@ -249,33 +316,29 @@ summary::after {
     margin-bottom: 24px;
   }
 
-  .accordion-list {
-    gap: 14px;
+  .adv-nav {
+    gap: 12px;
   }
 
-  .item:hover {
-    transform: translateY(-2px);
+  .adv-tab {
+    min-height: 60px;
+    padding: 0 16px;
   }
 
-  summary {
-    min-height: 58px;
-    padding: 0 18px;
+  .tab-label {
+    font-size: 14px;
   }
 
-  summary span {
-    font-size: 16px;
+  .detail-badge {
+    font-size: 14px;
   }
 
-  .item-content {
-    padding: 0 18px 24px 18px;
-  }
-
-  .item-content h4 {
+  .detail-section h4 {
     font-size: 15px;
   }
 
-  .item-content li,
-  .item-content p {
+  .detail-section p,
+  .detail-section li {
     font-size: 14px;
     line-height: 1.7;
     word-break: break-word;

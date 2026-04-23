@@ -1,5 +1,5 @@
 <template>
-  <div class="product" @click="goDetail":class="{ reverse }">
+  <div class="product" @click="goCategory":class="{ reverse }">
     <!-- 文本 -->
     <div class="text">
       <h4 class="tag">Рекомендуемый продукт</h4>
@@ -20,8 +20,8 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
-const goDetail = () => {
-  router.push(`/products/${props.category}/${props.id}`)
+const goCategory = () => {
+  router.push(`/products/${props.category}`)
 }
 
 const props =defineProps<{
