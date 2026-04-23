@@ -1,7 +1,7 @@
 <template>
   <section class="report">
     <div class="report-inner">
-      <h2>Надежность автомобильного класса</h2>
+      <h2>Безопасность и надежность</h2>
 
       <div class="report-grid">
         <article class="report-card pass">
@@ -124,21 +124,39 @@
 
 <style scoped>
 .report {
+  position: relative;
   padding: 120px 64px;
+  background: transparent;
+}
+
+.report::before {
+  content: '';
+  position: absolute;
+  inset: 0;
   background:
-    radial-gradient(circle at 18% 20%, rgba(47, 107, 255, 0.14), transparent 34%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+    linear-gradient(
+      180deg,
+      rgba(18, 24, 36, 0) 0%,
+      rgba(20, 27, 40, 0.16) 16%,
+      rgba(21, 28, 41, 0.34) 42%,
+      rgba(22, 30, 44, 0.54) 100%
+    ),
+    radial-gradient(circle at 22% 18%, rgba(47, 107, 255, 0.05), transparent 34%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .report-inner {
   max-width: 1280px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .report h2 {
   margin: 0 0 28px;
   padding-bottom: 18px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   color: #e3eaf0;
   font-size: 42px;
   line-height: 1.2;

@@ -27,7 +27,7 @@ import img6033 from './assets/6033.svg'
 import img7220 from './assets/7220.svg'
 import img6033_2 from './assets/6033-2.svg'
 
-const currentCategory = ref('low')
+const currentCategory = ref('car')
 
 const route = useRoute()
 watch(
@@ -46,8 +46,8 @@ watch(currentCategory, (val) => {
 
 
 const categories = [
-  { key: 'low', label: 'Малые тяговые натриевые аккумуляторы' },
   { key: 'car', label: '12V Автомобильные стартерные аккумуляторы' },
+  { key: 'low', label: 'Малые тяговые натриевые аккумуляторы' },
 ]
 
 
@@ -57,7 +57,7 @@ const products = [
   { id: 3, title: 'H8', category: 'car', img: imgH6Sample },
   { id: 4, title: 'H9', category: 'car', img: imgH6Sample },
   { id: 1, title: '4820', category: 'low', img: img4820 },
-  { id: 2, title: '4820(Всё в одном)', category: 'low', img: img4820_1 },
+  { id: 2, title: '4820', category: 'low', img: img4820_1 },
   { id: 3, title: '4833', category: 'low', img: img4833 },
   { id: 4, title: '6020', category: 'low', img: img6020 },
   { id: 5, title: '6033', category: 'low', img: img6033 },
@@ -73,8 +73,10 @@ const filteredProducts = computed(() => {
 <style scoped>
 .products-page {
   display: flex;
-  gap: 40px;
-  padding: 60px;
+  gap: 52px;
+  padding: 36px 48px 56px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 @media (max-width: 768px) {

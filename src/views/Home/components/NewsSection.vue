@@ -55,15 +55,13 @@ onUnmounted(() => {
 })
 
 const next = () => {
-  if (current.value < news.value.length - 1) {
-    current.value++
-  }
+  if (!news.value.length) return
+  current.value = (current.value + 1) % news.value.length
 }
 
 const prev = () => {
-  if (current.value > 0) {
-    current.value--
-  }
+  if (!news.value.length) return
+  current.value = (current.value - 1 + news.value.length) % news.value.length
 }
 
 const go = (i: number) => {

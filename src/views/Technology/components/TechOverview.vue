@@ -18,8 +18,18 @@
         </p>
       </div>
 
-      <div class="media">
-        <img src="../assets/intro.png" alt="Technology introduction" />
+      <div class="materials">
+        <article class="material-card sodium">
+          <img src="../assets/Na.png" alt="Na material comparison" />
+        </article>
+
+        <article class="material-card lithium">
+          <img src="../assets/Li.png" alt="Li material comparison" />
+        </article>
+
+        <article class="material-card lead">
+          <img src="../assets/Pb.png" alt="Pb material comparison" />
+        </article>
       </div>
     </div>
   </section>
@@ -33,11 +43,14 @@
 }
 
 .container {
-  width: min(100%, 1240px);
+  width: min(100%, 1280px);
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  align-items: flex-start;
+  gap: 48px;
+}
+
+.copy {
+  max-width: 980px;
 }
 
 .copy h2 {
@@ -59,54 +72,43 @@
   margin-top: 18px;
 }
 
-.media {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  width: 100%;
+.materials {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
 }
 
-.media::before {
-  content: '';
-  position: absolute;
-  inset: auto 50% -8% auto;
-  width: min(72%, 640px);
-  height: 72%;
-  border-radius: 28px;
-  background: radial-gradient(circle, rgba(47, 107, 255, 0.18), transparent 70%);
-  filter: blur(28px);
-  z-index: 0;
-  transform: translateX(50%);
+.material-card {
+  padding: 0;
 }
 
-.media img {
-  position: relative;
-  z-index: 1;
+.material-card img {
   width: 100%;
-  max-width: 920px;
   display: block;
-  border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.28);
+  object-fit: contain;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .overview {
     padding: 96px 40px;
   }
 
-  .container {
-    gap: 28px;
+  .materials {
+    grid-template-columns: 1fr;
   }
 
-  .media img {
-    max-width: 100%;
+  .material-card img {
+    height: 420px;
   }
 }
 
 @media (max-width: 768px) {
   .overview {
     padding: 72px 20px;
+  }
+
+  .container {
+    gap: 32px;
   }
 
   .copy h2 {
@@ -120,9 +122,8 @@
     line-height: 1.8;
   }
 
-  .media img {
-    max-width: 100%;
-    border-radius: 18px;
+  .material-card img {
+    height: 280px;
   }
 }
 </style>

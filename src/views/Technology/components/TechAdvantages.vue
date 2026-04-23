@@ -16,29 +16,37 @@
         </button>
       </div>
 
-      <div v-if="currentItem" class="adv-detail">
-        <div class="detail-head">
-          <span :class="['detail-badge', currentItem.key]">{{ currentItem.title }}</span>
-        </div>
+      <div
+        v-if="currentItem"
+        :class="['adv-detail', currentItem.key]"
+        :style="{ '--detail-bg': `url(${currentItem.background})` }"
+      >
+        <div class="detail-overlay"></div>
 
-        <div class="detail-body">
-          <section v-if="currentItem.features.length" class="detail-section">
-            <h4>{{ currentItem.featureLabel }}</h4>
-            <ul>
-              <li v-for="feature in currentItem.features" :key="feature">{{ feature }}</li>
-            </ul>
-          </section>
+        <div class="detail-content">
+          <div class="detail-head">
+            <span class="detail-badge">{{ currentItem.title }}</span>
+          </div>
 
-          <section v-if="currentItem.note" class="detail-section">
-            <p>{{ currentItem.note }}</p>
-          </section>
+          <div class="detail-body">
+            <section v-if="currentItem.features.length" class="detail-section">
+              <h4>{{ currentItem.featureLabel }}</h4>
+              <ul>
+                <li v-for="feature in currentItem.features" :key="feature">{{ feature }}</li>
+              </ul>
+            </section>
 
-          <section v-if="currentItem.values.length" class="detail-section">
-            <h4>{{ currentItem.valueLabel }}</h4>
-            <ul>
-              <li v-for="value in currentItem.values" :key="value">{{ value }}</li>
-            </ul>
-          </section>
+            <section v-if="currentItem.note" class="detail-section">
+              <p>{{ currentItem.note }}</p>
+            </section>
+
+            <section v-if="currentItem.values.length" class="detail-section">
+              <h4>{{ currentItem.valueLabel }}</h4>
+              <ul>
+                <li v-for="value in currentItem.values" :key="value">{{ value }}</li>
+              </ul>
+            </section>
+          </div>
         </div>
       </div>
     </div>
@@ -47,6 +55,11 @@
 
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
+import chargingBg from '../assets/charging.jpg'
+import ecoBg from '../assets/eco.png'
+import coldBg from '../assets/cold.jpg'
+import durabilityBg from '../assets/durability.png'
+import safetyBg from '../assets/safety.png'
 
 const advantageItems = [
   {
@@ -55,6 +68,7 @@ const advantageItems = [
     featureLabel: 'Характеристика:',
     valueLabel: 'Ценность для пользователя:',
     note: '',
+    background: chargingBg,
     features: [
       'Быстрая зарядка и высокая эффективность',
       'Заряд до 80% всего за 20 минут',
@@ -72,6 +86,7 @@ const advantageItems = [
     featureLabel: 'Не содержит:',
     valueLabel: 'Ценность для пользователя:',
     note: 'Снижение углеродных выбросов до 90%',
+    background: ecoBg,
     features: ['Свинец', 'Кадмий'],
     values: [
       'Снижение негативного воздействия на окружающую среду',
@@ -84,6 +99,7 @@ const advantageItems = [
     featureLabel: 'Характеристики:',
     valueLabel: 'Ценность для пользователя:',
     note: '',
+    background: coldBg,
     features: [
       'Работоспособность при температурах от -40°C до +70°C',
       'Сохранение до 90% ёмкости при -20°C',
@@ -102,6 +118,7 @@ const advantageItems = [
     featureLabel: 'Характеристики:',
     valueLabel: 'Ценность для пользователя:',
     note: '',
+    background: durabilityBg,
     features: [
       'До 3000 циклов глубокого разряда',
       'Срок службы в 5-10 раз выше, чем у свинцовых аккумуляторов',
@@ -118,6 +135,7 @@ const advantageItems = [
     featureLabel: 'Характеристика:',
     valueLabel: '',
     note: '',
+    background: safetyBg,
     features: [
       'Отсутствие риска возгорания при проколе',
       'Отсутствие риска возгорания при сжатии',
@@ -151,60 +169,61 @@ onMounted(() => {
 
 <style scoped>
 .advantages {
-  padding: 120px 80px;
+  padding: 88px 40px 72px;
 }
 
 .advantages h2 {
-  font-size: 36px;
-  margin-bottom: 44px;
+  font-size: 56px;
+  line-height: 1.1;
+  margin-bottom: 34px;
 }
 
 .advantages-layout {
-  max-width: 1180px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
   display: grid;
-  grid-template-columns: 340px minmax(0, 1fr);
-  gap: 56px;
+  grid-template-columns: 380px minmax(0, 1fr);
+  gap: 40px;
   align-items: start;
 }
 
 .adv-nav {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 18px;
 }
 
 .adv-tab {
-  min-height: 68px;
+  min-height: 74px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 18px;
   padding: 0 22px;
-  border: 1px solid rgba(255, 255, 255, 0.34);
+  border: 1px solid rgba(255, 255, 255, 0.24);
   border-left: 3px solid transparent;
   border-radius: 2px;
   background: transparent;
-  color: rgba(227, 234, 240, 0.92);
+  color: rgba(227, 234, 240, 0.88);
   cursor: pointer;
-  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
   text-align: left;
 }
 
 .adv-tab:hover {
-  border-color: rgba(255, 255, 255, 0.58);
+  border-color: rgba(255, 255, 255, 0.42);
   color: #ffffff;
   transform: translateX(3px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
 }
 
 .tab-label {
   display: inline-block;
-  padding: 0;
   color: inherit;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 600;
-  line-height: 1.45;
+  line-height: 1.4;
   letter-spacing: 0.01em;
 }
 
@@ -225,61 +244,86 @@ onMounted(() => {
 }
 
 .adv-tab.active {
-  border-color: rgba(255, 255, 255, 0.78);
-  border-left-color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.56);
+  border-left-color: rgba(255, 255, 255, 0.92);
   color: #ffffff;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.025);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.14);
 }
 
 .adv-detail {
-  min-height: 420px;
-  padding: 10px 0 0;
+  position: relative;
+  min-height: 460px;
+  padding: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  background-image: var(--detail-bg);
+  background-size: cover;
+  background-position: center;
+}
+
+.detail-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(8, 12, 20, 0.88) 0%, rgba(8, 12, 20, 0.78) 38%, rgba(8, 12, 20, 0.55) 100%),
+    linear-gradient(180deg, rgba(8, 12, 20, 0.18), rgba(8, 12, 20, 0.58));
+}
+
+.detail-content {
+  position: relative;
+  z-index: 1;
+  min-height: 460px;
+  padding: 30px 34px 30px 40px;
+  display: flex;
+  flex-direction: column;
 }
 
 .detail-head {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .detail-badge {
   display: inline-block;
   padding: 0 0 10px;
   color: #ffffff;
-  font-size: 18px;
+  font-size: 28px;
   font-weight: 700;
   line-height: 1.3;
   border-bottom: 2px solid rgba(255, 255, 255, 0.9);
 }
 
 .detail-body {
-  max-width: 640px;
+  max-width: 820px;
 }
 
 .detail-section + .detail-section {
-  margin-top: 22px;
+  margin-top: 18px;
 }
 
 .detail-section h4 {
-  margin: 0 0 10px;
-  color: rgba(255, 255, 255, 0.96);
-  font-size: 15px;
+  margin: 0 0 8px;
+  color: rgba(255, 255, 255, 0.98);
+  font-size: 20px;
   font-weight: 700;
   letter-spacing: 0.01em;
 }
 
 .detail-section p,
 .detail-section li {
-  color: rgba(218, 225, 235, 0.78);
-  font-size: 15px;
-  line-height: 1.85;
+  color: rgba(239, 244, 250, 0.88);
+  font-size: 19px;
+  line-height: 1.68;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.28);
 }
 
 .detail-section ul {
   margin: 0;
-  padding-left: 24px;
+  padding-left: 26px;
 }
 
 .detail-section li::marker {
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(255, 255, 255, 0.98);
 }
 
 .fade-up {
@@ -296,12 +340,12 @@ onMounted(() => {
 @media (max-width: 900px) {
   .advantages-layout {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 24px;
   }
 
-  .adv-detail {
+  .adv-detail,
+  .detail-content {
     min-height: auto;
-    padding-top: 0;
   }
 }
 
@@ -311,7 +355,7 @@ onMounted(() => {
   }
 
   .advantages h2 {
-    font-size: 28px;
+    font-size: 36px;
     line-height: 1.3;
     margin-bottom: 24px;
   }
@@ -329,8 +373,12 @@ onMounted(() => {
     font-size: 14px;
   }
 
+  .detail-content {
+    padding: 24px 20px;
+  }
+
   .detail-badge {
-    font-size: 14px;
+    font-size: 20px;
   }
 
   .detail-section h4 {
