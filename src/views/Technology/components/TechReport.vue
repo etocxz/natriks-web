@@ -13,9 +13,8 @@
             <p>Без возгорания и взрыва</p>
           </div>
 
-          <div class="chart chart-overcharge">
-            <span class="line blue"></span>
-            <span class="line red"></span>
+          <div class="chart">
+            <img src="../assets/overcharge.png" alt="Overcharge chart" />
           </div>
 
           <div class="card-footer">
@@ -33,9 +32,8 @@
             <p>Без возгорания и взрыва</p>
           </div>
 
-          <div class="chart chart-overdischarge">
-            <span class="line blue"></span>
-            <span class="line red"></span>
+          <div class="chart">
+            <img src="../assets/overdischarge.png" alt="Overdischarge chart" />
           </div>
 
           <div class="card-footer">
@@ -53,9 +51,8 @@
             <p>Без возгорания и взрыва</p>
           </div>
 
-          <div class="chart chart-short">
-            <span class="line blue"></span>
-            <span class="line red"></span>
+          <div class="chart">
+            <img src="../assets/short_circuit.png" alt="Short circuit chart" />
           </div>
 
           <div class="card-footer">
@@ -73,9 +70,8 @@
             <p>Без возгорания и взрыва</p>
           </div>
 
-          <div class="chart chart-crush">
-            <span class="line blue"></span>
-            <span class="line red"></span>
+          <div class="chart">
+            <img src="../assets/crush.png" alt="Crush chart" />
           </div>
 
           <div class="card-footer">
@@ -93,9 +89,8 @@
             <p>Без возгорания и взрыва</p>
           </div>
 
-          <div class="chart chart-nail">
-            <span class="line blue"></span>
-            <span class="line red"></span>
+          <div class="chart">
+            <img src="../assets/nail.png" alt="Nail penetration chart" />
           </div>
 
           <div class="card-footer">
@@ -113,9 +108,8 @@
             <p>Без возгорания и взрыва</p>
           </div>
 
-          <div class="chart chart-thermal">
-            <span class="line blue"></span>
-            <span class="line red"></span>
+          <div class="chart">
+            <img src="../assets/thermal_runaway.png" alt="Thermal runaway chart" />
           </div>
 
           <div class="card-footer">
@@ -130,14 +124,14 @@
 
 <style scoped>
 .report {
-  padding: 120px 80px;
+  padding: 120px 64px;
   background:
     radial-gradient(circle at 18% 20%, rgba(47, 107, 255, 0.14), transparent 34%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
 }
 
 .report-inner {
-  max-width: 1180px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -153,21 +147,23 @@
 .report-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  gap: 22px;
 }
 
 .report-card {
-  min-height: 210px;
+  min-height: 236px;
   display: grid;
-  grid-template-columns: 1fr 1.25fr;
+  grid-template-columns: 0.95fr 1.45fr;
   grid-template-rows: 1fr auto;
-  gap: 12px 18px;
-  padding: 22px 22px 0;
+  gap: 12px 16px;
+  padding: 20px 20px 0;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.96);
+  border-radius: 16px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(245, 247, 250, 0.96));
   color: #151923;
   overflow: hidden;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
   transition: 0.25s;
 }
 
@@ -179,7 +175,7 @@
 .copy h3 {
   margin: 0 0 14px;
   color: #1d2330;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 1.15;
 }
 
@@ -199,81 +195,20 @@
 }
 
 .chart {
-  position: relative;
   align-self: center;
-  height: 92px;
-  border-left: 1px solid #d7dce5;
-  border-bottom: 1px solid #d7dce5;
-  background:
-    linear-gradient(to right, rgba(33, 40, 54, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(33, 40, 54, 0.08) 1px, transparent 1px);
-  background-size: 22px 18px;
+  height: 128px;
+  padding: 8px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid rgba(21, 25, 35, 0.06);
 }
 
-.line {
-  position: absolute;
-  left: 8%;
-  right: 8%;
-  height: 3px;
-  border-radius: 999px;
-}
-
-.line.blue {
-  top: 54%;
-  background: #36a5ff;
-}
-
-.line.red {
-  top: 28%;
-  background: #ff4b4b;
-}
-
-.chart-overcharge .blue {
-  transform: rotate(-5deg);
-  transform-origin: left center;
-}
-
-.chart-overdischarge .red {
-  top: 52%;
-  transform: rotate(-12deg);
-  transform-origin: left center;
-}
-
-.chart-short .red {
-  top: 30%;
-  background: repeating-linear-gradient(135deg, #ff4b4b 0 7px, #ff8c8c 7px 10px);
-}
-
-.chart-crush .red {
-  top: 38%;
-  width: 70%;
-  transform: rotate(16deg);
-  transform-origin: left center;
-}
-
-.chart-nail .red {
-  top: 34%;
-  width: 76%;
-  transform: rotate(12deg);
-  transform-origin: left center;
-}
-
-.chart-nail::before,
-.chart-crush::before {
-  content: '';
-  position: absolute;
-  left: 18%;
-  top: 12%;
-  width: 2px;
-  height: 70%;
-  background: #ff4b4b;
-}
-
-.chart-thermal .red {
-  top: 32%;
-  width: 78%;
-  transform: rotate(10deg);
-  transform-origin: left center;
+.chart img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  filter: contrast(1.04) saturate(1.03);
 }
 
 .card-footer {
@@ -281,9 +216,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 10px -22px 0;
-  padding: 10px 22px;
-  background: #ffffff;
+  margin: 12px -20px 0;
+  padding: 11px 20px;
+  background: rgba(255, 255, 255, 0.92);
+  border-top: 1px solid rgba(21, 25, 35, 0.06);
 }
 
 .card-footer span {
@@ -327,6 +263,10 @@
 }
 
 @media (max-width: 1024px) {
+  .report {
+    padding-inline: 40px;
+  }
+
   .report-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -358,7 +298,7 @@
   }
 
   .chart {
-    height: 120px;
+    height: 180px;
   }
 
   .card-footer {
