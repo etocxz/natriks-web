@@ -122,8 +122,14 @@
     line-height: 1.8;
   }
 
+  .materials {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
   .material-card img {
-    height: 280px;
+    height: auto;
+    max-height: 160px;
   }
 }
 </style>
